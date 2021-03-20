@@ -844,3 +844,44 @@ $DRCH_WOUND_SEVERITY_REGEX_MAP = {
 
 # https://elanthipedia.play.net/Damage#Wounds
 $DRCH_WOUND_COMMA_SEPARATOR = /(?<=swollen|bruised|scarred|painful),(?=\s(?:swollen|bruised|mangled|inflamed))/
+
+# List of body parts sorted in order of most critical to heal.
+# Obtaining a "useless" wound to head/neck/chest/abdomen/back is lethal, regardless your vitaltiy.
+# https://elanthipedia.play.net/Empath_healing#Over-healing
+$DRCH_BODY_PARTS = [
+    # Most critical
+    'head',
+    'neck',
+    'chest',
+    'abdomen',
+    'back',
+    'right eye',
+    'left eye',
+    # Hinder spell casting
+    'nerves',
+    'skin',
+    'right hand',
+    'left hand',
+    # Least critical
+    'right arm',
+    'left arm',
+    'right leg',
+    'left leg'
+  ]
+
+  # Wounds and scars can be internal or external for every body part.
+  # External bleeders can be tended to temporarily stop vitality loss,
+  # internal bleeders cannot so they are more urgent to heal.
+  # https://elanthipedia.play.net/Empath_healing#Over-healing
+  $DRCH_WOUND_LOCATIONS = [
+    'internal',
+    'external'
+  ]
+
+  # Scars are a result of healing wounds.
+  # Scars can be lethal if you accrue too many of them.
+  # https://elanthipedia.play.net/Empath_healing#Over-healing
+  $DRCH_WOUND_TYPES = [
+    'scars',
+    'wounds'
+  ]
